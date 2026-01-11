@@ -1,0 +1,152 @@
+{
+  "items": [
+    {
+      "id": "samsung24",
+      "product_name": "Samsung Galaxy S24 Ultra",
+      "cost": 124999,
+      "currency": "INR",
+      "stars": 4.3,
+      "feedback_count": 1876,
+      "shipping": { "hours": 48, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 129999, "date": "2024-01-01" },
+        { "amount": 127999, "date": "2024-01-15" },
+        { "amount": 125999, "date": "2024-02-01" },
+        { "amount": 124999, "date": "2024-02-15" }
+      ],
+      "trust_score": 88,
+      "trending_score": 7200,
+      "seller": "Samsung Official Store"
+    },
+    {
+      "id": "oneplus12",
+      "product_name": "OnePlus 12 Pro",
+      "cost": 64999,
+      "currency": "INR",
+      "stars": 4.4,
+      "feedback_count": 1543,
+      "shipping": { "hours": 36, "express": false },
+      "stock_status": "unavailable",
+      "price_data": [
+        { "amount": 67999, "date": "2024-01-01" },
+        { "amount": 66999, "date": "2024-01-15" },
+        { "amount": 65999, "date": "2024-02-01" },
+        { "amount": 64999, "date": "2024-02-15" }
+      ],
+      "trust_score": 85,
+      "trending_score": 5400,
+      "seller": "OnePlus Official Store"
+    },
+    {
+      "id": "macbookair",
+      "product_name": "Apple MacBook Air M3",
+      "cost": 114999,
+      "currency": "INR",
+      "stars": 4.8,
+      "feedback_count": 892,
+      "shipping": { "hours": 72, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 119999, "date": "2024-01-01" },
+        { "amount": 117999, "date": "2024-01-15" },
+        { "amount": 115999, "date": "2024-02-01" },
+        { "amount": 114999, "date": "2024-02-15" }
+      ],
+      "trust_score": 94,
+      "trending_score": 4500,
+      "seller": "Apple Official Store"
+    },
+    {
+      "id": "ipadmini",
+      "product_name": "Apple iPad Mini 6",
+      "cost": 54999,
+      "currency": "INR",
+      "stars": 4.5,
+      "feedback_count": 2103,
+      "shipping": { "hours": 36, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 57999, "date": "2024-01-01" },
+        { "amount": 56999, "date": "2024-01-15" },
+        { "amount": 55999, "date": "2024-02-01" },
+        { "amount": 54999, "date": "2024-02-15" }
+      ],
+      "trust_score": 91,
+      "trending_score": 6200,
+      "seller": "Apple Official Store"
+    },
+    {
+      "id": "jblcharge5",
+      "product_name": "JBL Charge 5 Speaker",
+      "cost": 12999,
+      "currency": "INR",
+      "stars": 4.1,
+      "feedback_count": 1789,
+      "shipping": { "hours": 24, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 14999, "date": "2024-01-01" },
+        { "amount": 13999, "date": "2024-01-15" },
+        { "amount": 12999, "date": "2024-02-01" }
+      ],
+      "trust_score": 83,
+      "trending_score": 3900,
+      "seller": "JBL Official Store"
+    },
+    {
+      "id": "adidasultra",
+      "product_name": "Adidas Ultraboost 22",
+      "cost": 15999,
+      "currency": "INR",
+      "stars": 4.3,
+      "feedback_count": 2671,
+      "shipping": { "hours": 48, "express": false },
+      "stock_status": "unavailable",
+      "price_data": [
+        { "amount": 17999, "date": "2024-01-01" },
+        { "amount": 16999, "date": "2024-01-15" },
+        { "amount": 15999, "date": "2024-02-01" }
+      ],
+      "trust_score": 86,
+      "trending_score": 7100,
+      "seller": "Adidas Official Store"
+    },
+    {
+      "id": "pumarunning",
+      "product_name": "Puma Running Shoes",
+      "cost": 6999,
+      "currency": "INR",
+      "stars": 4.1,
+      "feedback_count": 3345,
+      "shipping": { "hours": 36, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 7999, "date": "2024-01-01" },
+        { "amount": 7499, "date": "2024-01-15" },
+        { "amount": 6999, "date": "2024-02-01" }
+      ],
+      "trust_score": 82,
+      "trending_score": 8900,
+      "seller": "Puma Official Store"
+    },
+    {
+      "id": "zarahoodie",
+      "product_name": "Zara Basic Hoodie",
+      "cost": 3999,
+      "currency": "INR",
+      "stars": 4.0,
+      "feedback_count": 1234,
+      "shipping": { "hours": 48, "express": false },
+      "stock_status": "available",
+      "price_data": [
+        { "amount": 4499, "date": "2024-01-01" },
+        { "amount": 4299, "date": "2024-01-15" },
+        { "amount": 3999, "date": "2024-02-01" }
+      ],
+      "trust_score": 80,
+      "trending_score": 7600,
+      "seller": "Zara Official Store"
+    }
+  ]
+}

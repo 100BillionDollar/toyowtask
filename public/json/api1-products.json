@@ -1,0 +1,127 @@
+{
+  "products": [
+    {
+      "product_id": "iphone15",
+      "title": "Apple iPhone 15 Pro Max",
+      "price": { "amount": 145999, "currency": "INR" },
+      "rating": 4.5,
+      "total_reviews": 2341,
+      "delivery_info": { "days": 1, "fast_delivery": true },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 155999, "date": "2024-01-01" },
+        { "price": 152999, "date": "2024-01-15" },
+        { "price": 149999, "date": "2024-02-01" },
+        { "price": 147999, "date": "2024-02-15" },
+        { "price": 145999, "date": "2024-03-01" }
+      ],
+      "seller_reliability": 92,
+      "popularity_score": 8900,
+      "vendor_name": "Apple Official Store"
+    },
+    {
+      "product_id": "airpods",
+      "title": "Apple AirPods Pro 2",
+      "price": { "amount": 24999, "currency": "INR" },
+      "rating": 4.7,
+      "total_reviews": 5621,
+      "delivery_info": { "days": 0.5, "fast_delivery": true },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 26999, "date": "2024-01-01" },
+        { "price": 25999, "date": "2024-01-15" },
+        { "price": 24999, "date": "2024-02-01" }
+      ],
+      "seller_reliability": 95,
+      "popularity_score": 12300,
+      "vendor_name": "Apple Official Store"
+    },
+    {
+      "product_id": "sonywh1000",
+      "title": "Sony WH-1000XM5 Headphones",
+      "price": { "amount": 29999, "currency": "INR" },
+      "rating": 4.6,
+      "total_reviews": 3210,
+      "delivery_info": { "days": 1, "fast_delivery": false },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 32999, "date": "2024-01-01" },
+        { "price": 31999, "date": "2024-01-15" },
+        { "price": 30999, "date": "2024-02-01" },
+        { "price": 29999, "date": "2024-02-15" }
+      ],
+      "seller_reliability": 90,
+      "popularity_score": 6800,
+      "vendor_name": "Sony Official Store"
+    },
+    {
+      "product_id": "nikedunk",
+      "title": "Nike Dunk Low Retro",
+      "price": { "amount": 8999, "currency": "INR" },
+      "rating": 4.2,
+      "total_reviews": 4456,
+      "delivery_info": { "days": 2, "fast_delivery": false },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 9999, "date": "2024-01-01" },
+        { "price": 9499, "date": "2024-01-15" },
+        { "price": 8999, "date": "2024-02-01" }
+      ],
+      "seller_reliability": 87,
+      "popularity_score": 9800,
+      "vendor_name": "Nike Official Store"
+    },
+    {
+      "product_id": "canoneosr6",
+      "title": "Canon EOS R6 Mark II",
+      "price": { "amount": 234999, "currency": "INR" },
+      "rating": 4.7,
+      "total_reviews": 567,
+      "delivery_info": { "days": 3, "fast_delivery": false },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 244999, "date": "2024-01-01" },
+        { "price": 239999, "date": "2024-01-15" },
+        { "price": 234999, "date": "2024-02-01" }
+      ],
+      "seller_reliability": 93,
+      "popularity_score": 2800,
+      "vendor_name": "Canon Official Store"
+    },
+    {
+      "product_id": "mi13pro",
+      "title": "Xiaomi 13 Pro",
+      "price": { "amount": 42999, "currency": "INR" },
+      "rating": 4.0,
+      "total_reviews": 1432,
+      "delivery_info": { "days": 1.5, "fast_delivery": false },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 45999, "date": "2024-01-01" },
+        { "price": 44999, "date": "2024-01-15" },
+        { "price": 43999, "date": "2024-02-01" },
+        { "price": 42999, "date": "2024-02-15" }
+      ],
+      "seller_reliability": 78,
+      "popularity_score": 5600,
+      "vendor_name": "Xiaomi Official Store"
+    },
+    {
+      "product_id": "realme11pro",
+      "title": "Realme 11 Pro",
+      "price": { "amount": 27999, "currency": "INR" },
+      "rating": 3.9,
+      "total_reviews": 2145,
+      "delivery_info": { "days": 2, "fast_delivery": false },
+      "availability": "in_stock",
+      "price_trend": [
+        { "price": 29999, "date": "2024-01-01" },
+        { "price": 28999, "date": "2024-01-15" },
+        { "price": 27999, "date": "2024-02-01" }
+      ],
+      "seller_reliability": 76,
+      "popularity_score": 6700,
+      "vendor_name": "Realme Official Store"
+    }
+  ]
+}

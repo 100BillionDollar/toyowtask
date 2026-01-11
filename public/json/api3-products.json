@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "item_code": "boatrockerz",
+      "display_name": "Boat Rockerz 550 Headphones",
+      "amount": 2999,
+      "currency": "INR",
+      "user_rating": 3.8,
+      "review_count": 8921,
+      "delivery_info": { "time": "24 hours", "express_available": false },
+      "inventory_status": "in_stock",
+      "price_history": [
+        { "price": 3499, "timestamp": "2024-01-01T00:00:00Z" },
+        { "price": 3299, "timestamp": "2024-01-15T00:00:00Z" },
+        { "price": 2999, "timestamp": "2024-02-01T00:00:00Z" }
+      ],
+      "seller_rating": 75,
+      "popularity_index": 11200,
+      "brand": "Boat"
+    },
+    {
+      "item_code": "unknown1",
+      "display_name": "Generic Wireless Mouse",
+      "amount": 1299,
+      "currency": "INR",
+      "user_rating": 3.5,
+      "review_count": 234,
+      "delivery_info": { "time": "48 hours", "express_available": false },
+      "inventory_status": "in_stock",
+      "price_history": [
+        { "price": 1599, "timestamp": "2024-01-01T00:00:00Z" },
+        { "price": 1499, "timestamp": "2024-01-15T00:00:00Z" },
+        { "price": 1299, "timestamp": "2024-02-01T00:00:00Z" }
+      ],
+      "seller_rating": 70,
+      "popularity_index": 3400,
+      "brand": "Generic"
+    },
+    {
+      "item_code": "unknown2",
+      "display_name": "USB-C Cable 2m",
+      "amount": 599,
+      "currency": "INR",
+      "user_rating": 4.0,
+      "review_count": 567,
+      "delivery_info": { "time": "24 hours", "express_available": true },
+      "inventory_status": "in_stock",
+      "price_history": [
+        { "price": 799, "timestamp": "2024-01-01T00:00:00Z" },
+        { "price": 699, "timestamp": "2024-01-15T00:00:00Z" },
+        { "price": 599, "timestamp": "2024-02-01T00:00:00Z" }
+      ],
+      "seller_rating": 78,
+      "popularity_index": 8900,
+      "brand": "Generic"
+    },
+    {
+      "item_code": "unknown3",
+      "display_name": "Laptop Stand Adjustable",
+      "amount": 2499,
+      "currency": "INR",
+      "user_rating": 4.2,
+      "review_count": 1234,
+      "delivery_info": { "time": "72 hours", "express_available": false },
+      "inventory_status": "in_stock",
+      "price_history": [
+        { "price": 2999, "timestamp": "2024-01-01T00:00:00Z" },
+        { "price": 2799, "timestamp": "2024-01-15T00:00:00Z" },
+        { "price": 2499, "timestamp": "2024-02-01T00:00:00Z" }
+      ],
+      "seller_rating": 82,
+      "popularity_index": 5600,
+      "brand": "Generic"
+    },
+    {
+      "item_code": "unknown4",
+      "display_name": "Bluetooth Speaker Portable",
+      "amount": 1899,
+      "currency": "INR",
+      "user_rating": 3.9,
+      "review_count": 890,
+      "delivery_info": { "time": "48 hours", "express_available": false },
+      "inventory_status": "in_stock",
+      "price_history": [
+        { "price": 2199, "timestamp": "2024-01-01T00:00:00Z" },
+        { "price": 2099, "timestamp": "2024-01-15T00:00:00Z" },
+        { "price": 1899, "timestamp": "2024-02-01T00:00:00Z" }
+      ],
+      "seller_rating": 76,
+      "popularity_index": 6700,
+      "brand": "Generic"
+    }
+  ]
+}
