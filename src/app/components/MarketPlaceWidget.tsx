@@ -11,8 +11,17 @@ import useDebounce from "../hooks/useDebounce"
 import { dbManager } from "../../lib/indexeddb-clean"
 import { mockAPI } from "../../lib/mockApi-data"
 import { Product } from "../../lib/indexeddb-clean"
+import { stateManager, usePerformance, useVirtualizedList } from "../../lib/stateManager"
+import { widgetInjector } from "../../lib/widgetInjector"
+import { useSecurity } from "../../lib/securityManager"
 
 export default function MarketplaceIntelligenceWidget() {
+  // Performance monitoring
+  const metrics = usePerformance()
+  
+  // Security features
+  const { initiateHandshake, sanitizeInput, createSandboxIframe, securityStatus } = useSecurity()
+  
   const [darkMode, setDarkMode] = useState(true)
   const [optimisticSearch, setOptimisticSearch] = useState("")
   const debouncedSearch = useDebounce(optimisticSearch, 300)
@@ -29,9 +38,40 @@ export default function MarketplaceIntelligenceWidget() {
     priceDeviation: [100],
   })
 
-  const [products, setProducts] = useState<Product[]>([])
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
-  const [trendingProducts, setTrendingProducts] = useState<Product[]>([])
+  // Use state manager for products
+  const [products, setProducts] = useState<Product[]>(() => 
+    stateManager.get('products') || []
+  )
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(() =>
+    stateManager.get('filteredProducts') || []
+  )
+  const [trendingProducts, setTrendingProducts] = useState<Product[]>(() =>
+    stateManager.get('trendingProducts') || []
+  )
+
+  // Subscribe to state changes
+  useEffect(() => {
+    const unsubscribeProducts = stateManager.subscribe('products', setProducts)
+    const unsubscribeFiltered = stateManager.subscribe('filteredProducts', setFilteredProducts)
+    const unsubscribeTrending = stateManager.subscribe('trendingProducts', setTrendingProducts)
+    
+    return () => {
+      unsubscribeProducts()
+      unsubscribeFiltered()
+      unsubscribeTrending()
+    }
+  }, [])
+
+  // Use virtualized list for performance
+  const virtualizedProducts = useVirtualizedList(
+    filteredProducts,
+    (product, index) => (
+      <div key={product.id} className="product-item">
+        {/* Product card will be rendered here */}
+      </div>
+    ),
+    120 // item height in pixels
+  )
 
   const searchControllerRef = useRef<AbortController | null>(null)
   const trendingControllerRef = useRef<AbortController | null>(null)
