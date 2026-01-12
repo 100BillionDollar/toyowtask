@@ -24,5 +24,4 @@ function Separator({
     />
   )
 }
-
 export { Separator }

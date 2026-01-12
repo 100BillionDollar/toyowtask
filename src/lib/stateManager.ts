@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-// Minimalist Global State Manager with Performance Tracking
 
 interface StateItem<T> {
   data: T;
@@ -25,7 +24,6 @@ class StateManager {
     componentCount: 0
   };
 
-  // Get state with performance tracking
   get<T>(key: string): T | undefined {
     const item = this.state.get(key);
     if (item) {
@@ -35,7 +33,6 @@ class StateManager {
     return item?.data;
   }
 
-  // Set state with performance tracking
   set<T>(key: string, data: T): void {
     const start = performance.now();
     
@@ -45,7 +42,6 @@ class StateManager {
       renderCount: 0
     });
 
-    // Notify subscribers
     const subs = this.subscribers.get(key);
     if (subs) {
       subs.forEach(callback => {
@@ -60,7 +56,6 @@ class StateManager {
     console.log(`⚡ State Update: ${key} (${totalTime.toFixed(2)}ms)`);
   }
 
-  // Subscribe to state changes
   subscribe<T>(key: string, callback: (data: T) => void): () => void {
     if (!this.subscribers.has(key)) {
       this.subscribers.set(key, new Set());
@@ -71,7 +66,6 @@ class StateManager {
     
     console.log(`👂 Subscribe: ${key} (total: ${this.metrics.componentCount})`);
     
-    // Return unsubscribe function
     return () => {
       const subs = this.subscribers.get(key);
       if (subs) {
@@ -82,7 +76,6 @@ class StateManager {
     };
   }
 
-  // Virtualized list for performance
   createVirtualizedList<T>(
     items: T[], 
     renderItem: (item: T, index: number) => React.ReactNode,
@@ -102,7 +95,6 @@ class StateManager {
     };
   }
 
-  // Performance profiling
   startProfiling(): void {
     console.log('🔬 Performance profiling started');
     this.metrics = {
@@ -112,7 +104,6 @@ class StateManager {
       componentCount: 0
     };
     
-    // FPS tracking
     let lastTime = performance.now();
     let frameCount = 0;
     
@@ -133,7 +124,6 @@ class StateManager {
     requestAnimationFrame(measureFPS);
   }
 
-  // Get performance report
   getPerformanceReport(): PerformanceMetrics {
     const memoryUsage = (performance as any).memory?.usedJSHeapSize || 0;
     this.metrics.memoryUsage = memoryUsage;
@@ -148,7 +138,6 @@ class StateManager {
     return this.metrics;
   }
 
-  // Lazy loading utility
   createLazyComponent<T>(
     loader: () => Promise<T>,
     fallback?: React.ReactNode
@@ -180,8 +169,7 @@ class StateManager {
     };
   }
 
-  // Clear old state (memory management)
-  cleanup(maxAge: number = 300000): void { // 5 minutes default
+  cleanup(maxAge: number = 300000): void { 
     const now = Date.now();
     let cleaned = 0;
     
@@ -196,10 +184,8 @@ class StateManager {
   }
 }
 
-// Global instance
 export const stateManager = new StateManager();
 
-// Performance hooks
 export const usePerformance = () => {
   const [metrics, setMetrics] = React.useState(stateManager.getPerformanceReport());
   

@@ -12,14 +12,11 @@ import { dbManager } from "../../lib/indexeddb-clean"
 import { mockAPI } from "../../lib/mockApi-data"
 import { Product } from "../../lib/indexeddb-clean"
 import { stateManager, usePerformance, useVirtualizedList } from "../../lib/stateManager"
-import { widgetInjector } from "../../lib/widgetInjector"
 import { useSecurity } from "../../lib/securityManager"
 
 export default function MarketplaceIntelligenceWidget() {
-  // Performance monitoring
   const metrics = usePerformance()
   
-  // Security features
   const { initiateHandshake, sanitizeInput, createSandboxIframe, securityStatus } = useSecurity()
   
   const [darkMode, setDarkMode] = useState(true)
@@ -38,7 +35,6 @@ export default function MarketplaceIntelligenceWidget() {
     priceDeviation: [100],
   })
 
-  // Use state manager for products
   const [products, setProducts] = useState<Product[]>(() => 
     stateManager.get('products') || []
   )
@@ -49,7 +45,6 @@ export default function MarketplaceIntelligenceWidget() {
     stateManager.get('trendingProducts') || []
   )
 
-  // Subscribe to state changes
   useEffect(() => {
     const unsubscribeProducts = stateManager.subscribe('products', setProducts)
     const unsubscribeFiltered = stateManager.subscribe('filteredProducts', setFilteredProducts)
@@ -62,15 +57,13 @@ export default function MarketplaceIntelligenceWidget() {
     }
   }, [])
 
-  // Use virtualized list for performance
   const virtualizedProducts = useVirtualizedList(
     filteredProducts,
     (product, index) => (
       <div key={product.id} className="product-item">
-        {/* Product card will be rendered here */}
       </div>
     ),
-    120 // item height in pixels
+    120 
   )
 
   const searchControllerRef = useRef<AbortController | null>(null)
@@ -176,30 +169,25 @@ export default function MarketplaceIntelligenceWidget() {
       setIsSearching(true)
       setError(null)
 
-      // Cancel previous search
       if (searchControllerRef.current) {
         searchControllerRef.current.abort()
       }
 
       searchControllerRef.current = new AbortController()
 
-      // Use enhanced search with deduplication
       const searchResult = await dbManager.searchProductsWithDeduplication(
         query,
         searchControllerRef.current.signal
       )
 
-      // If no cached results, search via API
       if (searchResult.results.length === 0) {
         const apiResults = await mockAPI.searchProducts(query)
         
-        // Cache the search results
         await dbManager.cacheProductsWithDeduplication(
           apiResults,
           'SEARCH_RESULTS'
         )
         
-        // Convert to normalized products for display
         const normalizedResults = apiResults.map(product => 
           dbManager.normalizeProduct(product, 'SEARCH_RESULTS')
         )
@@ -224,16 +212,13 @@ export default function MarketplaceIntelligenceWidget() {
     }
   }, [])
 
-  // Handle search with debouncing
   useEffect(() => {
     performSearch(debouncedSearch)
   }, [debouncedSearch, performSearch])
 
-  // Filter and sort products
   useEffect(() => {
     let results = [...products]
 
-    // Apply filters
     if (filters.inStock) {
       results = results.filter(p => p.inStock)
     }
@@ -241,21 +226,18 @@ export default function MarketplaceIntelligenceWidget() {
       results = results.filter(p => p.delivery < 48)
     }
 
-    // Apply price deviation filter
     if (filters.priceDeviation && filters.priceDeviation[0] < 100) {
       results = results.filter(p => {
-        // Check if priceHistory exists and has elements
         if (!p.priceHistory || p.priceHistory.length === 0) {
-          return true; // If no price history, include product
+          return true; 
         }
         
         const priceHistory = Array.isArray(p.priceHistory[0])
           ? p.priceHistory.map((h: any) => h.price)
           : p.priceHistory
         
-        // Check if priceHistory has elements before accessing [0]
         if (!priceHistory || priceHistory.length === 0) {
-          return true; // If no valid price history, include product
+          return true;
         }
         
         const deviation = ((priceHistory[0] - p.price) / priceHistory[0]) * 100
@@ -263,7 +245,6 @@ export default function MarketplaceIntelligenceWidget() {
       })
     }
 
-    // Sort products
     results.sort((a, b) => {
       if (sortBy === "price") return a.price - b.price
       if (sortBy === "rating") return b.rating - a.rating
